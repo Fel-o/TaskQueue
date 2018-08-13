@@ -53,7 +53,6 @@ class Bot(threading.Thread):
     def _idle(self):
         '''Wait for next scheduled task in queue.
         - If tasks are added to queue, check next task again'''
-        global q
         next_task = self.q.peek()
         time_until = self._time_until(next_task)
         print(f'Bot: Time until next task {time_until}')
